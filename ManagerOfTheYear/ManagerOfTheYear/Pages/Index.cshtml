@@ -4,7 +4,70 @@
     ViewData["Title"] = "Home page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<style type="text/css">
+
+    .bio-image {
+        background-size: 100px;
+        border-radius: 11px;
+        background-color: #eee;
+        padding: 1em;
+        display: inline-block;
+        width: 100px;
+        height: 100px;
+        cursor: pointer;
+        transition: width 1s, height 1s, background-size 1s;
+    }
+
+        .bio-image:hover {
+            /*animation-name: manager-grow;
+            animation-duration: 1s;
+            animation-timing-function: ease-out;*/
+            width: 150px;
+            height: 150px;
+            background-size: 150px;
+        }
+
+    .manager-section {
+        flex-grow: 1;
+        text-align: center;
+        /*width:50%;
+        text-align:center;
+        display:inline-block;*/
+    }
+
+    .manager-manager{
+        display:flex;
+        flex-direction:row;
+    }
+
+</style>
+
+<script>
+
+    function Vote(id) {
+        xhttp.open("POST", "@Url.Action("Index", "Vote")", true);
+        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhttp.send("id=1");
+    }
+
+</script>
+
+
+<div class="manager-manager">
+
+    <div class="manager-section">
+
+        <div class="bio-image" style="background-image:url('../images/Amazon-icon-300x300.png')" onclick="Vote(1)" >
+
+        </div>
+
+    </div>
+    <div class="manager-section">
+
+        <div class="bio-image" style="background-image: url('../images/google-1015752_960_720.png')" onclick="Vote(1)">
+
+        </div>
+
+    </div>
+
 </div>

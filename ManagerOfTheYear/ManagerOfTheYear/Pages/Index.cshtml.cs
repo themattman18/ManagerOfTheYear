@@ -21,5 +21,11 @@ namespace ManagerOfTheYear.Pages
         {
 
         }
+
+        public ActionResult Vote(int id)
+        {
+
+            return null;
+        }
     }
 }

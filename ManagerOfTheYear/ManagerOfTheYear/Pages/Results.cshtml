@@ -3,6 +3,17 @@
 @{
     ViewData["Title"] = "Results";
 }
+    <div style="padding:25px;">
+        <h1 style="font-family:'miraculouschristmasregular'; color:#b80000; font-size:80px;">Results</h1>
 
-<h1>Results</h1>
+        <h2 style="font-family:'miraculouschristmasregular'; color:#b80000; font-size:50px;">David</h2>
+        <div class="progress">
+            <div class="progress-bar" style="width:@ViewData["DavidPercentage"]%;" role="progressbar" aria-valuenow="@ViewData["DavidCount"]" aria-valuemin="0" aria-valuemax="@ViewData["Total"]">@ViewData["DavidPercentage"]%</div>
+        </div>
 
+
+        <h2 style="font-family:'miraculouschristmasregular'; color:#b80000; font-size:50px;">Tommy</h2>
+        <div class="progress">
+            <div class="progress-bar" style="width:@ViewData["TommyPercentage"]%;" role="progressbar" aria-valuenow="@ViewData["TommyCount"]" aria-valuemin="0" aria-valuemax="@ViewData["Total"]">@ViewData["TommyPercentage"]%</div>
+        </div>
+    </div>

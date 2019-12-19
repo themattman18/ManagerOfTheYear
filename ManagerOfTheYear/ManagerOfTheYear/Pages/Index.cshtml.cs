@@ -17,15 +17,23 @@ namespace ManagerOfTheYear.Pages
             _logger = logger;
         }
 
-        public void OnGet()
+        public IActionResult OnGet()
         {
+            if (Request.Cookies["hasVoted"] != null)
+            {
+                return Redirect("/Results");
+            }
 
+            return Page();
         }
 
-        public ActionResult Vote(int id)
+        public async Task<IActionResult> OnGetVote(int id)
         {
+            Response.Cookies.Append("hasVoted", "true");
 
+            // log results
             return null;
+
         }
     }
 }

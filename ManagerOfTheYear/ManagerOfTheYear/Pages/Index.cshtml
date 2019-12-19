@@ -15,7 +15,8 @@
         height: 150px;
         background-size: 150px;
         cursor: pointer;
-        border: 5px solid #e2ba27;
+        /*border: 5px solid #666;*/
+        /*box-shadow: 5px 5px 5px #666;*/
         transition: width 1s, height 1s, background-size 1s;
     }
 
@@ -45,14 +46,15 @@
     }
 
     .pros-cons {
-        font-family: 'miraculouschristmasregular'; margin-top:2px;
+        
+        margin-top:2px;
         text-align: left;
         width: 300px;
         background-color: white;
         position: relative;
         border-radius: 11px;
         padding: 5px;
-        font-size: 25px;
+        
         border: 3px solid #b80000;
     }
         .pros-cons::after {
@@ -64,6 +66,11 @@
             border-width: 5px;
             border-style: solid;
             border-color: transparent transparent #b80000 transparent;
+        }
+
+        .pros-cons-header{
+            font-family: 'miraculouschristmasregular'; 
+            font-size: 25px;
         }
 
     .bio-stacked {
@@ -78,9 +85,10 @@
 <script>
 
     function Vote(id) {
-        xhttp.open("POST", "@Url.Action("Index", "Vote")", true);
-        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-        xhttp.send("id=1");
+        debugger;
+        $.get("/Index/?handler=Vote&id=" + id, function () {
+            window.location = "/Results";
+        });
     }
 
 </script>
@@ -95,16 +103,16 @@
 
             </div>
             <div class="pros-cons">
-                Pros:
+                <span class="pros-cons-header">Pros:</span>
                 <ul>
                     <li>Keeps G1 company on Fridays</li>
-                    <li>item 2</li>
+                    <li>Super chill</li>
                 </ul>
 
-                Cons:
+                <span class="pros-cons-header">Cons:</span>
                 <ul>
                     <li>Keeps G1 company on Fridays (can't leave until he does)</li>
-                    <li>item 2</li>
+                    <li>Never brings breakfast</li>
                 </ul>
 
             </div>
@@ -121,13 +129,13 @@
             </div>
 
             <div class="pros-cons">
-                Pros:
+                <span class="pros-cons-header">Pros:</span>
                 <ul>
                     <li>Brought Chick-fil-a 3 weeks in a row</li>
                     <li>Spikey hair...if you're into that</li>
                 </ul>
 
-                Cons:
+                <span class="pros-cons-header">Cons:</span>
                 <ul>
                     <li>Hates Christmas lights</li>
                     <li>Hasn't brought Chick-fil-a in a few weeks</li>
